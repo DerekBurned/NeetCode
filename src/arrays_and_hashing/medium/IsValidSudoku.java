@@ -1,24 +1,19 @@
 package arrays_and_hashing.medium;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.stream.IntStream;
-
 public class IsValidSudoku {
 
 
     public static boolean isValidSudoku(char[][] board) {
 
         for (int i = 0; i < 9; i++) {
-            if (!isValidBlock(board, i, 0, i, 8)) {
+            if (isValidBlock(board, i, 0, i, 8)) {
                 return false;
             }
         }
 
 
         for (int j = 0; j < 9; j++) {
-            if (!isValidBlock(board, 0, j, 8, j)) {
+            if (isValidBlock(board, 0, j, 8, j)) {
                 return false;
             }
         }
@@ -26,7 +21,7 @@ public class IsValidSudoku {
 
         for (int row = 0; row < 9; row += 3) {
             for (int col = 0; col < 9; col += 3) {
-                if (!isValidBlock(board, row, col, row + 2, col + 2)) {
+                if (isValidBlock(board, row, col, row + 2, col + 2)) {
                     return false;
                 }
             }
@@ -41,13 +36,13 @@ public class IsValidSudoku {
                 if (board[i][j] != '.') {
                     int num = board[i][j] - '1';  
                     if (seen[num]) {
-                        return false;
+                        return true;
                     }
                     seen[num] = true;
                 }
             }
         }
-        return true;
+        return false;
     }
 
     public static void main(String[] args) {
