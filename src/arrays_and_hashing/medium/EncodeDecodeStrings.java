@@ -28,10 +28,10 @@ public class EncodeDecodeStrings {
 
         return new ArrayList<>();
     }
-    public static String encodemethod1(String str){
-        
-        return "";
-    }
+    public static String encodeMethod1(String str) {
+    return str.length() + "#" + str;
+}
+
     public static String encodemethod2(String str){
 
         return "";
