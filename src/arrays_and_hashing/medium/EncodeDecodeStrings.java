@@ -32,12 +32,17 @@ public class EncodeDecodeStrings {
     return str.length() + "#" + str;
 }
 
-    public static String encodemethod2(String str){
+    public static String encodeMethod2(String str) {
+    return str.replace("\\", "\\\\").replace("|", "\\|");
+}
 
-        return "";
-    }
-    public static String encodemethod3(String str){
+public static String encodeMethod3(String str) {
+    int len = str.length();
+    char[] prefix = {
+        (char)((len >> 24) & 0xFF), (char)((len >> 16) & 0xFF),
+        (char)((len >>  8) & 0xFF), (char)( len        & 0xFF)
+    };
+    return new String(prefix) + str;
+}
 
-        return "";
-    }
 }
