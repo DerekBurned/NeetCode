@@ -28,6 +28,14 @@ public class EncodeDecodeStrings {
 
         return new ArrayList<>();
     }
+    public static String encode(List<String> strs) {
+        StringBuilder sb = new StringBuilder();
+        for (String str : strs) {
+        sb.append(str.length()).append('#').append(str);
+        }
+        return sb.toString();
+}
+
     public static String encodeMethod1(String str) {
     return str.length() + "#" + str;
 }
