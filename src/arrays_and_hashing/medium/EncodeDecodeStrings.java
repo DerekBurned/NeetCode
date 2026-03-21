@@ -4,25 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class EncodeDecodeStrings {
-    public static String encode(List<String> strs) {
-        for(String str : strs){
-            switch (str.length() % 3){
-                case 0:
-
-                    break;
-                case 1:
-
-                    break;
-                case 2:
-
-                    break;
-                default:
-
-                    break;
-            }
-        }
-        return String.join(" ", strs);
-    }
+   
 
     public static List<String> decode(String str) {
     List<String> result = new ArrayList<>();
