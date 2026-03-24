@@ -1,4 +1,4 @@
-package two_pointers.hard;
+package two_pointers.medium;
 
 import java.util.ArrayList;
 import java.util.Arrays;
